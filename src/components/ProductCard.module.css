@@ -57,7 +57,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .productDetails {
+    .productContent {
         gap: var(--space-400);
     }
 }

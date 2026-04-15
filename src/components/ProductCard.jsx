@@ -19,7 +19,7 @@ export default function ProductCard({ product }) {
         <div className={styles.product}>
             <picture>
                 <source srcSet={DesktopImage} media="(min-width: 48rem)"/>
-                <img className={styles.productBanner} src={MobileImage} alt="A bottle of Gabrielle Essence Eau De Parfum perfume with leaves at the sides." width={350} height={342} />
+                <img className={styles.productBanner} src={MobileImage} alt={title} width={350} height={342} />
             </picture>
             <div className={styles.productContent}>
                 <div className={styles.productIntroduction}>
@@ -31,7 +31,7 @@ export default function ProductCard({ product }) {
                     <strong className={styles.productCurrentPrice}>${price.current}</strong>
                     <s className={styles.productPreviousPrice}>${price.previous}</s>
                 </p>
-                <Button onAddToCard={handleAddToCart}>{buttonText}</Button>
+                <Button onAddToCart={handleAddToCart}>{buttonText}</Button>
             </div>
         </div>
     )
