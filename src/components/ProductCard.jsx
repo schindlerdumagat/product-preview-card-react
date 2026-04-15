@@ -1,29 +1,37 @@
+import { useState } from "react";
 import Button from "./Button";
-import "./productCard.css";
+import MobileImage from "../assets/image-product-cropped.jpg";
+import DesktopImage from "../assets/image-product-desktop.jpg";
+import styles from "./ProductCard.module.css";
 
-export default function ProductCard() {
+export default function ProductCard({ product }) {
+
+    const [isAdded, setIsAdded] = useState(false);
+    const { category, title, description, price } = product;
 
     function handleAddToCart () {
-        alert("Product Added To Cart");
+        setIsAdded(prev => !prev);
     }
 
+    const buttonText = isAdded ? "Remove from Cart" : "Add to Cart";
+
     return (
-        <div className="product">
+        <div className={styles.product}>
             <picture>
-                <source srcSet="/assets/images/image-product-desktop.jpg" media="(min-width: 48rem)"/>
-                <img className="product__banner" src="/assets/images/image-product-cropped.jpg" alt="A bottle of Gabrielle Essence Eau De Parfum perfume with leaves at the sides." width={350} height={342} />
+                <source srcSet={DesktopImage} media="(min-width: 48rem)"/>
+                <img className={styles.productBanner} src={MobileImage} alt="A bottle of Gabrielle Essence Eau De Parfum perfume with leaves at the sides." width={350} height={342} />
             </picture>
-            <div className="product__content">
-                <div className="product__introduction">
-                    <p className="product__tag">perfume</p>
-                    <h2 className="product__title">Gabrielle Essence Eau De Parfum</h2>
-                    <p className="product__description">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+            <div className={styles.productContent}>
+                <div className={styles.productIntroduction}>
+                    <p className={styles.productTag}>{category}</p>
+                    <h2 className={styles.productTitle}>{title}</h2>
+                    <p className={styles.productDescription}>{description}</p>
                 </div>
-                <p className="product__price">
-                    <strong className="product__current-price">$149.99</strong>
-                    <s className="product__previous-price">$169.99</s>
+                <p className={styles.productPrice}>
+                    <strong className={styles.productCurrentPrice}>${price.current}</strong>
+                    <s className={styles.productPreviousPrice}>${price.previous}</s>
                 </p>
-                <Button onAddToCard={handleAddToCart}><img src="/assets/images/icon-cart.svg" alt="" width={18} height={18}/>Add to Cart</Button>
+                <Button onAddToCard={handleAddToCart}>{buttonText}</Button>
             </div>
         </div>
     )
