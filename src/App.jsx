@@ -41,7 +41,7 @@ export default function App() {
         justifyContent: "center",
         gap: "1rem",
       }}>
-        {PRODUCTS.map(product => <ProductCard product={product} />)}
+        {PRODUCTS.map(product => <ProductCard key={product.title} product={product} />)}
       </ul>
     </main>
   )
