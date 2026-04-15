@@ -1,0 +1,25 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-100);
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--clr-white);
+    background-color: var(--clr-green-500);
+    border: 1px solid var(--clr-green-500);
+    border-radius: var(--rounded-sm);
+    padding: 1.15em;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+}
+
+.btn:hover {
+    background-color: var(--clr-green-700);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--clr-green-500);
+    outline-offset: 2px;
+}

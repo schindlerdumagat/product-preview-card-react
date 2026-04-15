@@ -1,0 +1,133 @@
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  line-height: 1; /* Set shorter line heights on headings and interactive elements */
+  text-wrap: balance; /* Balance text wrapping on headings */
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* FONTS */
+
+/* fraunces-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/fraunces-v38-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/montserrat-v31-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/montserrat-v31-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+  /* COLORS */
+
+  --clr-black: hsl(212, 21%, 14%);
+  --clr-grey: hsl(228, 12%, 48%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-green-500: hsl(158, 36%, 37%);
+  --clr-green-700: hsl(158, 42%, 18%);
+
+  /* TYPOGRAPHY */
+
+  --ff-header: "Fraunces", sans-serif;
+  --ff-body: "Montserrat", sans-serif;
+  --fs-header: 2rem;
+  --fs-body: .875rem;
+
+  /* SPACING */
+
+  --space-500: 2.5rem;
+  --space-400: 2rem;
+  --space-300: 1.5rem;
+  --space-200: 1rem;
+  --space-100: .5rem;
+  --space-50: .25rem;
+
+  /* BORDER-RADIUS */
+
+  --rounded-sm: 8px;
+
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--clr-grey);
+  background-color: var(--clr-cream);
+  padding: var(--space-200);
+}
+
+h1, h2 {
+  font-family: var(--ff-header);
+  font-size: var(--fs-header);
+  font-weight: 700;
+  color: var(--clr-black);
+}
